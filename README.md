@@ -15,13 +15,6 @@ The repository contains the feature extraction and the training/evaluation pipel
 | `features.csv` | Extracted feature table (optional, if shared) |
 | `results/` | Output tables and figures written by the script |
 
-## Installation
-
-```bash
-git clone https://github.com/<USERNAME>/<REPOSITORY>.git
-cd <REPOSITORY>
-pip install -r requirements.txt
-```
 
 Main dependencies: `numpy`, `pandas`, `scikit-learn`, `xgboost`, `lightgbm`, `matplotlib`, `librosa`, `soundfile`, `psutil`.
 If `xgboost` or `lightgbm` is not installed, the script skips those models and continues with the rest.
