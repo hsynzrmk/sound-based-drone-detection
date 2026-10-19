@@ -28,22 +28,6 @@ Kurulum:
     features_extraction_info.json   -> kullanılan TÜM çıkarım parametreleri, kütüphane
                                        sürümleri ve öznitelik çıkarım süreleri (ms/örnek)
 
-REVİZYON NOTLARI (hakem yorumlarına göre)
------------------------------------------
-1) `duration_sec` özniteliği KALDIRILDI. Veri setinde kayıt uzunluğu sınıflara göre
-   sistematik olarak farklıdır (drone klipleri <= 1.024 s, unknown klipleri çoğunlukla
-   1.022 / 0.975 / 0.960 s, bir kısmı 5 s); bu yüzden süre tek başına sınıfı
-   neredeyse kusursuz ayırır ve drone'un akustik bir özelliği değildir.
-2) FIXED_LENGTH_SEC (varsayılan 1.0 s): tüm klipler sabit uzunluğa getirilir.
-   Uzun klipler ortadan kırpılır; kısa klipler sessizlikle DEĞİL, kendi içinde
-   döngüsel tekrarla ('wrap') tamamlanır (sıfır dolgusu sınıfa özgü bir iz bırakırdı).
-   Orijinal (kırpmasız) davranış için FIXED_LENGTH_SEC = None yapın.
-3) Pencereleme parametreleri açıkça yazıldı. Önceki sürüm librosa VARSAYILANLARINI
-   kullanıyordu; aşağıdaki değerler bu varsayılanlarla aynıdır (n_fft=2048,
-   win_length=n_fft, hop_length=512, 'hann', center=True, pad_mode='constant',
-   n_mels=128, delta width=9 / mode='interp'). Böylece makalede birebir raporlanabilir.
-4) Öznitelik çıkarım süresi (yükleme hariç/dahil) ölçülüp JSON dosyasına yazılır.
-   Not: bu süreler betiğin çalıştığı bilgisayara aittir.
 """
 
 import json
