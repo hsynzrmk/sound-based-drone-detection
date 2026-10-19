@@ -120,37 +120,3 @@ python detect_all_models.py --csv features.csv --task multiclass --external_csv 
 
 Logistic Regression, SVM (RBF), SVM (Linear), K-Nearest Neighbors, Decision Tree, Random Forest, Extra Trees, Gradient Boosting, AdaBoost, Gaussian Naive Bayes, Linear Discriminant Analysis, MLP, XGBoost, LightGBM.
 Full hyperparameters are written to `results/model_hyperparameters_<task>.csv`.
-
-## Main results (from the paper)
-
-| Task | Best model | Test accuracy | Macro F1 | CV accuracy |
-|---|---|---|---|---|
-| Drone recognition (Drone Audio Dataset) | LightGBM | 97.49 % | 0.9356 | 98.13 % |
-| Three-class classification (Drone Audio Dataset) | LightGBM | 97.45 % | 0.8981 | 97.59 % |
-| Three-class (Drone Detection Dataset, 90 recordings) | LightGBM | 88.89 % | 0.8889 | 79.43 % |
-
-Efficiency (three-class task): boosting models are below 2 MB with median inference latency below 1 ms; Random Forest and Extra Trees are considerably larger (about 12 MB and 35 MB) and slower (about 11 ms).
-Energy consumption was not measured, and the timings were obtained on a single desktop computer.
-
-## Limitations
-
-- The main dataset was largely recorded indoors and augmented with noise clips, so it does not fully represent outdoor effects such as wind noise, distance attenuation, Doppler shift and reverberation.
-- Each clip carries a single label; simultaneous multiple drones are not modeled.
-- The additional dataset contains only 90 recordings.
-
-## Citation
-
-```bibtex
-@article{ezirmik_drone_audio,
-  author  = {Ezirmik, Abdurrahim H{\"u}seyin},
-  title   = {Sound-Based Drone Detection Using Machine Learning Methods},
-  journal = {Harran University Journal of Engineering},
-  year    = {2026}
-}
-```
-
-*(Update the entry with volume, pages and DOI after publication.)*
-
-## License
-
-Released under the MIT License (see `LICENSE`). The datasets are subject to their own licenses.
