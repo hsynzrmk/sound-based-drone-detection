@@ -11,8 +11,7 @@ The repository contains the feature extraction and the training/evaluation pipel
 
 | File | Description |
 |---|---|
-| `detect_all_models.py` | Feature extraction, training, evaluation and efficiency benchmarking |
-| `requirements.txt` | Python dependencies (pin your own versions) |
+| `train_all_models.py` | Feature extraction, training, evaluation and efficiency benchmarking |
 | `features.csv` | Extracted feature table (optional, if shared) |
 | `results/` | Output tables and figures written by the script |
 
