@@ -11,7 +11,8 @@ The repository contains the feature extraction and the training/evaluation pipel
 
 | File | Description |
 |---|---|
-| `train_all_models.py` | Feature extraction, training, evaluation and efficiency benchmarking |
+| `train_all_models.py` | Training, evaluation and efficiency benchmarking |
+| `extract_audio_features.py` | Audio feature extraction |
 | `features.csv` | Extracted feature table (optional, if shared) |
 | `results/` | Output tables and figures written by the script |
 
