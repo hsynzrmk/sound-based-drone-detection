@@ -1,30 +1,4 @@
 """
-Ses tabanlı drone tanıma (BINARY: drone / drone değil) - droneml.py (REVİZE SÜRÜM)
-
-Hakem yorumlarına göre yapılan değişiklikler
----------------------------------------------
-H1/H2  Bölme KAYIT BAZLI (group-based) yapılır: aynı orijinal kayıttan türeyen
-       tüm klipler ya tamamen eğitimde ya tamamen testtedir
-       (StratifiedGroupKFold). Hem 80/20 test ayrımı hem de CV bu şekilde yapılır.
-       Test kümesi model seçimi/CV içinde hiç kullanılmaz (CV yalnızca eğitim
-       kümesi üzerinde). Grup kesişimi kodla doğrulanır (assert).
-H1     `duration_sec` özniteliği çıkarılır: kayıt uzunluğu veri setindeki bir
-       artefakttır (tek başına ~%99,97 doğruluk verir) ve drone'un akustik
-       özelliği değildir. Çoğunluk sınıfı (dummy) baseline raporlanır.
-H3     Macro VE weighted F1 birlikte raporlanır; ayrıca balanced accuracy, MCC,
-       sınıf bazlı precision/recall/F1 ve (binary görevde) drone-sınıfı metrikleri.
-H4     Librosa pencereleme parametreleri (n_fft, hop_length, win_length, pencere
-       fonksiyonu, örnekleme frekansı) sabit olarak tanımlanır ve çıktıya yazılır;
-       nihai öznitelik vektörü boyutu yazdırılır.
-H5     Tüm modellerin hiperparametreleri ve optimize edilen kayıp fonksiyonları
-       `model_hyperparameters.csv` dosyasına yazılır.
-H6     "Hafif/gerçek zamanlı" iddiası için ölçüm tablosu:
-       öznitelik çıkarım süresi (ms/örnek), çıkarım gecikmesi (ms, batch=1,
-       tek iş parçacığı), model dosya boyutu (KB), bellek (RAM) artışı, eğitim süresi.
-H7     Bağımsız/dış veri seti desteği: başka bir veri setinden (ör. UAV Acoustic
-       Signatures, Batear, Drone-Detection-Dataset) aynı öznitelik çıkarımıyla
-       üretilmiş CSV ile "eğit: ana veri, test: dış veri" değerlendirmesi.
-
 Kullanım
 --------
   # 1) Drone tanıma (binary), ana deney
@@ -47,11 +21,6 @@ Kullanım
 Kurulum:
   pip install pandas numpy scikit-learn xgboost lightgbm matplotlib librosa soundfile psutil
 
-ÖNEMLİ NOT (H4): Buradaki çıkarım fonksiyonu ve pencere sabitleri, güncellenmiş
-`droneses.py` / `extract_audio_features.py` ile BİREBİR aynıdır (librosa varsayılanları
-açıkça yazılmıştır). `features.csv` dosyasını bu güncel betiklerle YENİDEN ÜRETİN:
-eski CSV `duration_sec` içerir ve klipleri sabit uzunluğa getirmemiştir. Eğitim betiği
-eski CSV'de `duration_sec` sütununu zaten dışarıda bırakır.
 """
 
 import argparse
