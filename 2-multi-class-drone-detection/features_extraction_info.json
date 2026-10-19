@@ -1,0 +1,40 @@
+{
+  "sample_rate_hz": 22050,
+  "mono": true,
+  "fixed_length_sec": 1.0,
+  "crop_mode": "center",
+  "short_clip_padding": "wrap (döngüsel tekrar)",
+  "n_fft": 2048,
+  "win_length": 2048,
+  "hop_length": 512,
+  "window": "hann",
+  "center": true,
+  "pad_mode": "constant",
+  "n_mfcc": 13,
+  "n_mels": 128,
+  "delta_width": 9,
+  "delta_mode": "interp",
+  "contrast_bands": 6,
+  "contrast_fmin_hz": 200.0,
+  "rolloff_percent": 0.85,
+  "n_chroma": 12,
+  "summary_statistics": [
+    "mean",
+    "std (ddof=0)"
+  ],
+  "librosa_version": "0.11.0",
+  "numpy_version": "1.26.4",
+  "python_version": "3.10.22",
+  "machine": "Windows-10-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel",
+  "n_samples": 90,
+  "feature_vector_size": 102,
+  "timing_ms_per_sample": {
+    "load_resample_median": 6.228500002180226,
+    "features_median": 12.525300015113316,
+    "features_mean": 12.68998889071453,
+    "features_p95": 13.799755000218282,
+    "load_plus_features_median": 18.74885000870563,
+    "note": "Bu süreler betiğin çalıştığı bilgisayara aittir (ilk dosya JIT ısınmasını içerebilir)."
+  }
+}

@@ -1,0 +1,15 @@
+Model,Model boyutu (KB),Çıkarım gecikmesi medyan (ms),Çıkarım gecikmesi p95 (ms),"RAM artışı (MB, yaklaşık)",Öznitelik çıkarım (ms/örnek),"Toplam (öznitelik+çıkarım, ms)",Train time (s)
+Logistic Regression,4.5,0.181,0.184,0.02,,,0.051
+SVM (RBF),691.9,0.278,0.294,0.0,,,0.324
+SVM (Linear),473.1,0.22,0.254,0.0,,,0.505
+K-Nearest Neighbors,7560.5,0.663,0.789,7.68,,,0.01
+Decision Tree,31.5,0.197,0.201,0.01,,,0.744
+Random Forest,9454.4,10.403,11.533,10.06,,,11.793
+Extra Trees,29519.9,10.598,11.134,25.64,,,1.624
+Gradient Boosting,136.1,0.291,0.295,0.11,,,24.159
+AdaBoost,35.5,4.288,4.706,0.0,,,4.645
+Naive Bayes,6.8,0.195,0.199,0.0,,,0.017
+Linear Discriminant Analysis,7.9,0.191,0.2,0.0,,,0.043
+MLP (Neural Net),681.0,0.206,0.21,0.19,,,2.523
+XGBoost,331.8,0.407,0.451,0.25,,,1.42
+LightGBM,777.1,0.726,0.791,0.0,,,1.956
